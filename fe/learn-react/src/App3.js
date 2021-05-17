@@ -2,7 +2,8 @@ import "./App.css";
 
 import React, { Component } from "react";
 
-let { Consumer, Provider } = React.createContext();
+// 如果没有Provider 拿默认值
+let { Consumer, Provider } = React.createContext({ bbb: 124 });
 
 // 支持无状态组件
 
@@ -20,8 +21,12 @@ class Son extends Component {
   render() {
     return (
       <Consumer>
-        {({ aaa }) => {
-          return <section>{aaa}</section>;
+        {({ aaa, onAdd, bbb }) => {
+          return (
+            <section>
+              {aaa},{bbb} <button onClick={onAdd}>add</button>
+            </section>
+          );
         }}
       </Consumer>
     );
@@ -49,7 +54,7 @@ class Parent extends Component {
   };
   render() {
     return (
-      <Provider value={{ aaa: this.state.aaa }}>
+      <Provider value={{ aaa: this.state.aaa, onAdd: this.onAdd }}>
         <button onClick={this.onAdd}>add</button>
         <Child />
       </Provider>

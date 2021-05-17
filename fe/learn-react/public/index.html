@@ -15,28 +15,31 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
     <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div>1、父传子 props 传值</div>
+    <h1>父子组件传参</h1>
+    <div>1、props 传值</div>
     <div id="root"></div>
     <hr />
-    <div>2、父传子 父组件通过ref 调用子组件内部方法</div>
+    <div>2、组件通过ref 调用子组件内部方法</div>
     <div id="root2"></div>
     <hr />
-    <div>3、父层声明context孙层申明使用</div>
+    <h1>兄弟组件之间</h1>
+    <section>利用父层来传参数 同1</section>
+    <hr></hr>
+    <h1 >跨组件传参</h1>
+    <div>4、声明context申明使用</div>
     <div id="root3"></div>
+    <div>5、观察者模式 原生实现</div>
+    <div id="root5"></div>
+    <div>6、观察者模式 使用events</div>
+    <div id="root6"></div>
     <hr />
+    <div>react-redux</div>
+    <div id="root7"></div>
+
     https://zhuanlan.zhihu.com/p/326254966
   </body>
 </html>
