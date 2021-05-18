@@ -4,10 +4,13 @@
 
 [访问网址](https://hongz1125.github.io/tips/)
 
-[1、ES6 类写法与基础](fe/es6/index.html)
+[1、ES6类写法与基础](fe/es6/1、ES6类写法与基础)
 
-[快速全网页截图] chrome 打开调试 按 command+shift+p  (capture full size screenshow)
+[2、前端需要掌握的nginx](fe/es6/index/2、前端需要掌握的nginx.md)
 
+[3、快速全网页截图] chrome 打开调试 按 command+shift+p  (capture full size screenshow)
+
+[4、react传值](fe/4、react传值)
 
 test1
 test2

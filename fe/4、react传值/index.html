@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  </head>
+  <body>
+    <pre>asdfasdf</pre>
+
+    <section id="root"></section>
+
+    <script type="text/babel">
+      class Child extends React.Component {
+        constructor(props) {
+          super(props)
+        }
+        render() {
+          return (
+            <div>
+              <button
+                onClick={this.props.onAdd.bind(
+                  this,
+                  this.props.num,
+                  this.props.num2
+                )}
+              >
+                点击 {this.props.num} {this.props.num2}
+              </button>
+            </div>
+          )
+        }
+      }
+
+      class Parent extends React.Component {
+        constructor() {
+          super()
+          this.state = {
+            num2: 78,
+            num: 456,
+          }
+          this.onAdd = this.onAdd.bind(this)
+        }
+        onAdd(a, b) {
+          console.log(this)
+          this.setState({
+            num: a + 1,
+            num2: b + 1,
+          })
+        }
+        render() {
+          let { num2, num } = this.state
+          return (
+            <div>
+              <Child num2={num2} num={num} onAdd={this.onAdd} />
+              大家好
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render(<Parent />, document.getElementById('root'))
+    </script>
+  </body>
+</html>
